@@ -41,13 +41,20 @@ export function Header() {
 
   return (
     <header className="flex h-12 shrink-0 items-center justify-between border-b px-3 sm:px-4">
-      {/* Left — logo + wordmark */}
-      <div className="flex items-center gap-2">
-        <span className="text-emerald-500">
+      {/* Left — logo + wordmark (click to reload) */}
+      <button
+        type="button"
+        onClick={() => window.location.reload()}
+        aria-label="Reload MergePDF"
+        className="group flex items-center gap-2 rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring/60"
+      >
+        <span className="text-emerald-500 transition-transform group-hover:scale-105">
           <Logo className="size-6" />
         </span>
-        <span className="text-sm font-semibold tracking-tight">MergePDF</span>
-      </div>
+        <span className="text-sm font-semibold tracking-tight transition-opacity group-hover:opacity-80">
+          MergePDF
+        </span>
+      </button>
 
       {/* Right — donate + settings */}
       <div className="flex items-center gap-1.5">
