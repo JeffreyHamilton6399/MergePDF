@@ -3,7 +3,7 @@
 import * as React from "react";
 import { toast } from "sonner";
 import { Header } from "@/components/mergepdf/header";
-import { Footer } from "@/components/mergepdf/footer";
+import { SiteFooter } from "@/components/site-footer";
 import { Dropzone } from "@/components/mergepdf/dropzone";
 import { Toolbar } from "@/components/mergepdf/toolbar";
 import { PageGrid } from "@/components/mergepdf/page-grid";
@@ -391,7 +391,7 @@ export default function Home() {
         )}
       </main>
 
-      <Footer />
+      <SiteFooter />
 
       <input
         ref={addInputRef}

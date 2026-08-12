@@ -20,6 +20,7 @@ import {
   FileText,
   Github,
 } from "lucide-react";
+import { FeedbackButton } from "@/components/feedback-button";
 import { Logo } from "./logo";
 import { LegalDialog, type LegalKind } from "./legal-dialog";
 
@@ -58,15 +59,16 @@ export function Header() {
 
       {/* Right — donate + settings */}
       <div className="flex items-center gap-1.5">
+        <FeedbackButton />
         <Button
-          variant="ghost"
+          variant="outline"
           size="sm"
           asChild
-          className="h-7 rounded-full px-3 text-rose-500 hover:bg-rose-500/10 hover:text-rose-500"
+          className="h-7 gap-1.5 rounded-full border-rose-200 px-3 text-xs font-medium text-rose-600 hover:bg-rose-50 hover:text-rose-700 dark:border-rose-500/30 dark:text-rose-400 dark:hover:bg-rose-950/40 dark:hover:text-rose-300"
         >
           <a href={DONATE_URL} target="_blank" rel="noopener noreferrer">
             <Heart className="size-3.5" />
-            <span className="text-xs font-medium">Donate</span>
+            <span className="hidden sm:inline">Donate</span>
           </a>
         </Button>
 
