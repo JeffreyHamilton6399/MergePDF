@@ -93,7 +93,7 @@ export function Dropzone({ onFiles, compact = false }: DropzoneProps) {
       }}
       onDragLeave={() => setDragOver(false)}
       className={cn(
-        "group flex h-full w-full cursor-pointer flex-col items-center justify-center rounded-xl border-2 border-dashed px-6 py-10 text-center transition-colors",
+        "group mx-auto flex min-h-[300px] w-full max-w-md cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed px-6 py-10 text-center transition-colors",
         dragOver
           ? "border-emerald-500 bg-emerald-500/5"
           : "border-border hover:border-emerald-500/50 hover:bg-muted/40"
@@ -101,28 +101,23 @@ export function Dropzone({ onFiles, compact = false }: DropzoneProps) {
     >
       <div
         className={cn(
-          "mb-4 flex size-14 items-center justify-center rounded-xl border bg-background text-emerald-500 shadow-sm transition-transform group-hover:scale-105",
+          "flex size-12 items-center justify-center rounded-full border bg-background text-emerald-500 shadow-sm transition-transform group-hover:scale-105",
           dragOver && "scale-105"
         )}
       >
-        <FileText className="size-7" strokeWidth={1.5} />
+        <FileText className="size-6" strokeWidth={1.5} />
       </div>
 
-      <h2 className="text-lg font-semibold tracking-tight">Drop PDFs to merge</h2>
-      <p className="mt-1.5 max-w-sm text-sm text-muted-foreground">
+      <h2 className="text-base font-semibold tracking-tight">Drop PDFs</h2>
+      <p className="max-w-[34ch] text-sm text-muted-foreground">
         Merge, split, rotate, and rearrange — privately in your browser.
       </p>
+      <p className="text-xs text-muted-foreground/70">or click to browse</p>
 
-      <div className="mt-5 flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-xs text-muted-foreground">
-        <span className="inline-flex items-center gap-1.5">
-          <ShieldCheck className="size-3.5 text-emerald-500" />
-          No uploads
-        </span>
-        <span className="opacity-40">·</span>
-        <span>No sign-up</span>
-        <span className="opacity-40">·</span>
-        <span>100% free</span>
-      </div>
+      <span className="mt-1 inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
+        <ShieldCheck className="size-3.5 text-emerald-500" />
+        No uploads · No sign-up · 100% free
+      </span>
 
       <input
         ref={inputRef}
