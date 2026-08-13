@@ -375,12 +375,12 @@ export default function Home() {
           </>
         ) : (
           <div
-            className="flex min-h-0 flex-1 items-stretch p-3 sm:p-6"
+            className="flex min-h-0 flex-1 overflow-y-auto p-3 sm:p-6"
             onDragOver={onEditorDragOver}
             onDragLeave={onEditorDragLeave}
             onDrop={onEditorDrop}
           >
-            <div className="mx-auto flex w-full max-w-2xl flex-col">
+            <div className="m-auto flex w-full max-w-2xl shrink-0 flex-col">
               <Dropzone onFiles={handleFiles} />
               <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
                 <ShieldCheck className="size-3.5 text-emerald-500" />
