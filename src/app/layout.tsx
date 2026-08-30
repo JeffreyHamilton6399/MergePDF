@@ -1,15 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { Source_Sans_3, Source_Code_Pro } from "next/font/google";
+import { Inter_Tight, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
-const sans = Source_Sans_3({
+const sans = Inter_Tight({
   variable: "--font-app-sans",
   subsets: ["latin"],
 });
 
-const mono = Source_Code_Pro({
+const mono = JetBrains_Mono({
   variable: "--font-app-mono",
   subsets: ["latin"],
 });
