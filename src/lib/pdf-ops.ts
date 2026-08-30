@@ -9,7 +9,7 @@
 import type { PageItem, SourceFile } from "./pdf-pages";
 
 /* -------------------------------------------------------------------------- */
-/*  pdfjs — thumbnail rendering                                               */
+/*  pdfjs - thumbnail rendering                                               */
 /* -------------------------------------------------------------------------- */
 
 let pdfjsPromise: Promise<typeof import("pdfjs-dist")> | null = null;
@@ -77,7 +77,7 @@ export async function getPdfPageCount(file: File): Promise<number> {
 }
 
 /* -------------------------------------------------------------------------- */
-/*  pdf-lib — structural operations                                          */
+/*  pdf-lib - structural operations                                          */
 /* -------------------------------------------------------------------------- */
 
 let pdfLibPromise: Promise<typeof import("pdf-lib")> | null = null;
@@ -93,7 +93,10 @@ async function getFflate() {
 }
 
 /** Cache loaded source PDFDocuments (pdf-lib) keyed by source id for reuse. */
-const docCache = new Map<string, Awaited<ReturnType<typeof import("pdf-lib")>["PDFDocument"]["load"]>>();
+const docCache = new Map<
+  string,
+  Awaited<ReturnType<(typeof import("pdf-lib"))["PDFDocument"]["load"]>>
+>();
 
 async function loadSourceDoc(source: SourceFile) {
   const { PDFDocument } = await getPdfLib();
@@ -175,7 +178,7 @@ export async function mergeToPdf(
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Split — one PDF per page, zipped                                          */
+/*  Split - one PDF per page, zipped                                          */
 /* -------------------------------------------------------------------------- */
 
 export async function splitToZip(
@@ -221,7 +224,7 @@ export async function splitToZip(
 }
 
 /* -------------------------------------------------------------------------- */
-/*  Extract — selected pages as a single new PDF                             */
+/*  Extract - selected pages as a single new PDF                             */
 /* -------------------------------------------------------------------------- */
 
 export async function extractToPdf(
@@ -229,7 +232,7 @@ export async function extractToPdf(
   sources: SourceFile[],
   onProgress?: (done: number, total: number) => void
 ): Promise<void> {
-  // Extract is merge over a subset — reuse merge logic.
+  // Extract is merge over a subset - reuse merge logic.
   return mergeToPdf(pages, sources, onProgress);
 }
 

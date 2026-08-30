@@ -1,47 +1,38 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Source_Sans_3, Source_Code_Pro } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { Toaster } from "@/components/ui/sonner";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const sans = Source_Sans_3({
+  variable: "--font-app-sans",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const mono = Source_Code_Pro({
+  variable: "--font-app-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "MergePDF — Merge, split & rearrange PDFs privately in your browser",
+  title: "MergePDF: merge, split and reorder PDF pages",
   description:
-    "Merge, split, rotate, and rearrange PDF pages entirely in your browser. Drop multiple PDFs, drag page thumbnails to reorder, merge into one file. No uploads, no sign-up, no ads. Your documents never leave your device.",
-  keywords: [
-    "merge PDF",
-    "split PDF",
-    "rotate PDF",
-    "rearrange PDF pages",
-    "PDF editor",
-    "private PDF",
-    "client-side PDF",
-  ],
+    "Drop in one or more PDFs, drag the page thumbnails into the order you want, rotate or delete what you do not need, and save one file back out.",
   authors: [{ name: "Jeffrey Hamilton" }],
   icons: {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "MergePDF — Private in-browser PDF tools",
+    title: "MergePDF",
     description:
-      "Merge, split, rotate, and rearrange PDF pages entirely in your browser. No uploads, no sign-up, no ads.",
+      "Merge, split, rotate and reorder PDF pages in the browser.",
     type: "website",
   },
   twitter: {
     card: "summary",
-    title: "MergePDF — Private in-browser PDF tools",
+    title: "MergePDF",
     description:
-      "Merge, split, rotate, and rearrange PDF pages entirely in your browser. No uploads, no sign-up, no ads.",
+      "Merge, split, rotate and reorder PDF pages in the browser.",
   },
 };
 
@@ -63,7 +54,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
+        className={`${sans.variable} ${mono.variable} antialiased bg-background text-foreground`}
       >
         <ThemeProvider
           attribute="class"

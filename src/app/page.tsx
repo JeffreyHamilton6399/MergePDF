@@ -363,7 +363,7 @@ export default function Home() {
               {/* Drag-to-add overlay */}
               {dragOverEditor && (
                 <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center bg-background/80 backdrop-blur-sm">
-                  <div className="flex flex-col items-center gap-2 rounded-xl border-2 border-dashed border-emerald-500 px-8 py-6 text-emerald-600">
+                  <div className="flex flex-col items-center gap-2 rounded-xl border-2 border-dashed border-stone-500 px-8 py-6 text-stone-600">
                     <UploadCloud className="size-7" />
                     <span className="text-sm font-medium">
                       Drop to add more PDFs
@@ -383,7 +383,7 @@ export default function Home() {
             <div className="m-auto flex w-full max-w-2xl shrink-0 flex-col">
               <Dropzone onFiles={handleFiles} />
               <p className="mt-4 flex items-center justify-center gap-1.5 text-center text-xs text-muted-foreground">
-                <ShieldCheck className="size-3.5 text-emerald-500" />
+                <ShieldCheck className="size-3.5 text-stone-500" />
                 iLovePDF uploads your tax returns. We don&apos;t.
               </p>
             </div>

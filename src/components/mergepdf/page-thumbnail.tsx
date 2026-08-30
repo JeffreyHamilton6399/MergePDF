@@ -51,7 +51,7 @@ export function SortablePageThumbnail({
     onToggleSelect(page.id, e.shiftKey);
   };
 
-  // Action buttons must not start a drag — block pointer-down from reaching
+  // Action buttons must not start a drag - block pointer-down from reaching
   // the card-level drag listeners.
   const block = (e: React.PointerEvent | React.MouseEvent) => {
     e.stopPropagation();
@@ -67,12 +67,12 @@ export function SortablePageThumbnail({
       className={cn(
         "group relative flex h-40 cursor-grab select-none flex-col overflow-hidden rounded-md border bg-card shadow-sm transition-[box-shadow,transform] active:cursor-grabbing sm:h-44",
         selected
-          ? "border-emerald-500 ring-2 ring-emerald-500/60"
-          : "border-border hover:border-emerald-500/40",
-        dragging && "z-10 opacity-50 shadow-xl ring-2 ring-emerald-500/40"
+          ? "border-stone-500 ring-2 ring-stone-500/60"
+          : "border-border hover:border-stone-500/40",
+        dragging && "z-10 opacity-50 shadow-xl ring-2 ring-stone-500/40"
       )}
     >
-      {/* Source color accent — thin left edge */}
+      {/* Source color accent - thin left edge */}
       <span
         className={cn(
           "absolute left-0 top-0 z-10 h-full w-0.5",
@@ -106,7 +106,7 @@ export function SortablePageThumbnail({
           {index + 1}
         </span>
 
-        {/* Drag hint — subtle, appears on hover to signal draggability */}
+        {/* Drag hint - subtle, appears on hover to signal draggability */}
         <span
           className="pointer-events-none absolute bottom-1.5 right-1.5 text-foreground/20 opacity-0 transition-opacity group-hover:opacity-100"
           aria-hidden
@@ -130,7 +130,7 @@ export function SortablePageThumbnail({
               e.stopPropagation();
               onRotate(page.id);
             }}
-            className="flex size-6 items-center justify-center rounded bg-black/65 text-white backdrop-blur-sm transition-colors hover:bg-emerald-600"
+            className="flex size-6 items-center justify-center rounded bg-black/65 text-white backdrop-blur-sm transition-colors hover:bg-stone-600"
           >
             <RotateCw className="size-3" />
           </button>

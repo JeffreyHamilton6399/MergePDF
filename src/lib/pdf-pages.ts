@@ -27,11 +27,11 @@ export interface PageItem {
 
 /**
  * Color palette used to color-code pages by source file.
- * Deliberately avoids indigo/blue as a primary — emerald stays reserved for
+ * Deliberately avoids indigo/blue as a primary - emerald stays reserved for
  * the "selected" + "merge" accent.
  */
 export const SOURCE_COLORS = [
-  "text-emerald-500",
+  "text-stone-500",
   "text-rose-500",
   "text-amber-500",
   "text-teal-500",

@@ -1,7 +1,7 @@
 import { cn } from "@/lib/utils";
 
 /**
- * MergePDF logo — a flat emerald rounded square with two overlapping page
+ * MergePDF logo - a flat emerald rounded square with two overlapping page
  * marks representing the "merge" action. No gradients, no glow.
  */
 export function Logo({ className }: { className?: string }) {

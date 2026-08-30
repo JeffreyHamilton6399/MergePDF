@@ -24,7 +24,7 @@ export function Dropzone({ onFiles, compact = false }: DropzoneProps) {
       const rejected = all.length - pdfs.length;
       if (rejected > 0) {
         toast.error(
-          `${rejected} file${rejected > 1 ? "s" : ""} skipped — only PDF is supported.`
+          `${rejected} file${rejected > 1 ? "s" : ""} skipped, only PDF is supported.`
         );
       }
       if (pdfs.length > 0) onFiles(pdfs);
@@ -58,8 +58,8 @@ export function Dropzone({ onFiles, compact = false }: DropzoneProps) {
           }}
           onDragLeave={() => setDragOver(false)}
           className={cn(
-            "flex w-full items-center gap-2 rounded-lg border border-dashed px-3 py-2 text-xs text-muted-foreground transition-colors hover:border-emerald-500/50 hover:text-foreground",
-            dragOver && "border-emerald-500 text-emerald-600"
+            "flex w-full items-center gap-2 rounded-lg border border-dashed px-3 py-2 text-xs text-muted-foreground transition-colors hover:border-stone-500/50 hover:text-foreground",
+            dragOver && "border-stone-500 text-stone-600"
           )}
         >
           <Upload className="size-3.5" />
@@ -95,13 +95,13 @@ export function Dropzone({ onFiles, compact = false }: DropzoneProps) {
       className={cn(
         "group mx-auto flex min-h-[300px] w-full max-w-md cursor-pointer flex-col items-center justify-center gap-3 rounded-xl border-2 border-dashed px-6 py-10 text-center transition-colors",
         dragOver
-          ? "border-emerald-500 bg-emerald-500/5"
-          : "border-border hover:border-emerald-500/50 hover:bg-muted/40"
+          ? "border-stone-500 bg-stone-500/5"
+          : "border-border hover:border-stone-500/50 hover:bg-muted/40"
       )}
     >
       <div
         className={cn(
-          "flex size-12 items-center justify-center rounded-full border bg-background text-emerald-500 shadow-sm transition-transform group-hover:scale-105",
+          "flex size-12 items-center justify-center rounded-full border bg-background text-stone-500 shadow-sm transition-transform group-hover:scale-105",
           dragOver && "scale-105"
         )}
       >
@@ -110,13 +110,13 @@ export function Dropzone({ onFiles, compact = false }: DropzoneProps) {
 
       <h2 className="text-base font-semibold tracking-tight">Drop PDFs</h2>
       <p className="max-w-[34ch] text-sm text-muted-foreground">
-        Merge, split, rotate, and rearrange — privately in your browser.
+        Merge, split, rotate and reorder pages.
       </p>
       <p className="text-xs text-muted-foreground/70">or click to browse</p>
 
       <span className="mt-1 inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 text-xs font-medium text-muted-foreground">
-        <ShieldCheck className="size-3.5 text-emerald-500" />
-        No uploads · No sign-up · 100% free
+        <ShieldCheck className="size-3.5 text-stone-500" />
+        Everything happens in this tab.
       </span>
 
       <input

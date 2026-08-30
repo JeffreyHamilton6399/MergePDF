@@ -84,7 +84,7 @@ export function Toolbar({
         {/* Status */}
         <div className="flex min-w-0 items-center gap-2 text-xs text-muted-foreground">
           <span className="inline-flex items-center gap-1.5 font-medium text-foreground">
-            <Layers className="size-3.5 text-emerald-500" />
+            <Layers className="size-3.5 text-stone-500" />
             <span>{pageCount}</span>
             <span className="hidden text-muted-foreground sm:inline">
               {pageCount === 1 ? "page" : "pages"}
@@ -93,7 +93,7 @@ export function Toolbar({
           {hasSelection && (
             <>
               <Separator orientation="vertical" className="h-4" />
-              <span className="text-emerald-600 dark:text-emerald-400">
+              <span className="text-stone-600 dark:text-stone-400">
                 {selectedCount} selected
               </span>
             </>
@@ -150,7 +150,7 @@ export function Toolbar({
             size="sm"
             onClick={onMerge}
             disabled={busy || !hasPages}
-            className="ml-1 h-8 gap-1.5 rounded-lg bg-emerald-600 px-3 text-xs font-medium text-white shadow-sm hover:bg-emerald-700"
+            className="ml-1 h-8 gap-1.5 rounded-lg bg-stone-600 px-3 text-xs font-medium text-white shadow-sm hover:bg-stone-700"
           >
             <Merge className="size-3.5" />
             <span>Merge All</span>
